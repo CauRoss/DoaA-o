@@ -97,7 +97,9 @@
         pos_hint: {'center_x': 0.5, 'center_y': 0.13}
         size_hint_x: .8
         elevation:0
-        on_release: root.manager.current = 'menu_screen'
+        on_release: 
+            root.manager.current = 'menu_screen'
+            root.manager.transition.direction = 'left'
     MDTextButton:
         text: 'Já possui uma conta? [u]Faça login.[/u]'
         bold: True
@@ -148,19 +150,46 @@
                         text: 'Explorar'
                         icon: 'magnify'
                         halign: 'center'
+                        MDTopAppBar:
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.967}
+                            elevation: 0 
+
 
                     MDBottomNavigationItem:
                         name: 'terceira tela'
                         text: 'Perfil'
                         icon: 'account'
                         halign: 'center'
-                        canvas:
-                            Color:
-                                rgba: 0, 0.5, 0.5, 1  # Cor Teal
-                            Rectangle:
-                                pos: (0, 650)
-                                size: (480,400)
+
                         Image:
-                            source: '3135823.png'
-                            size_hint: (0.35, 0.35)
+                            source: 'conta.png'
+                            size_hint: (0.4, 0.40)
                             pos_hint: {'center_x': 0.5, 'center_y': 0.85}
+                        
+                        
+                        MDFillRoundFlatButton:
+                            text: '    Editar perfil    '
+                            bold: True
+                            text_color: 1,1,1,1
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.68}
+                            size_hint_x: .2
+                            elevation: 0
+                        MDFloatLayout:
+                            orientation: 'vertical'
+                            MDList:
+                                OneLineAvatarIconListItem:
+                                    text: 'Minhas campanhas'
+                                    IconRightWidget:
+                                        icon: 'arrow-right'
+                                OneLineAvatarIconListItem:
+                                    text: 'Minhas doações'
+                                    IconRightWidget:
+                                        icon: 'arrow-right'
+                                OneLineAvatarIconListItem:
+                                    text: 'Favoritos'
+                                    IconRightWidget:
+                                        icon: 'arrow-right'
+                                OneLineAvatarIconListItem:
+                                    text: 'Configurações'
+                                    IconRightWidget:
+                                        icon: 'arrow-right'
