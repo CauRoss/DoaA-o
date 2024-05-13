@@ -35,7 +35,7 @@
         pos_hint: {'center_x': 0.5, 'center_y': 0.2}
         size_hint_x: .8
         elevation:0
-        mg_bg_color: 
+        on_release: root.manager.current = 'menu_screen'
     MDTextButton:
         text: 'Ainda não tem uma conta? [u]Cadastre-se.[/u]'
         bold: True
@@ -44,6 +44,7 @@
         pos_hint: {'center_x': 0.5, 'center_y': 0.09}
         font_size: dp(10)
         size_hint_x: .8
+        on_release: root.manager.current = 'criar_cadastro'
 
 
 
@@ -87,6 +88,7 @@
         pos_hint: {'center_x': 0.5, 'center_y': 0.13}
         size_hint_x: .8
         elevation:0
+        on_release: root.manager.current = 'menu_screen'
     MDTextButton:
         text: 'Já possui uma conta? [u]Faça login.[/u]'
         bold: True
@@ -95,6 +97,7 @@
         pos_hint: {'center_x': 0.5, 'center_y': 0.09}
         font_size: dp(10)
         size_hint_x: .8
+        on_release: root.manager.current  = 'criar_login'
 
 <MenuScreen>:
     name: 'menu_screen'
