@@ -21,14 +21,14 @@
         icon_right: 'email'
         size_hint_x: .8
         text_color: (3, 187, 133)
-        mg_bg_color: '#03bb85'
+        
     MDTextField:
         hint_text: 'Senha'
         pos_hint: {'center_x': 0.5, 'center_y': 0.3}
         size_hint_x: .8
         icon_right: 'lock'
         password: True
-        mg_bg_color: '#03bb85'
+        
     MDRaisedButton:
         text: 'Login'
         text_color: 1,1,1,1
@@ -44,13 +44,22 @@
         pos_hint: {'center_x': 0.5, 'center_y': 0.09}
         font_size: dp(10)
         size_hint_x: .8
-        on_release: root.manager.current = 'criar_cadastro'
-
+        on_release:    
+            root.manager.current = 'criar_cadastro'
+            root.manager.transition.direction = 'left'
 
 
 
 <RegisterScreen>:
     name: 'criar_cadastro'
+    MDIconButton:
+        icon: 'arrow-left'
+        theme_text_color: 'Custom'
+        text_color: (0, 128, 128)
+        pos_hint: {'center_x': 0.05, 'center_y': 0.97}
+        on_release: 
+            root.manager.current = 'criar_login'
+            root.manager.transition.direction = 'right'
     Image:
         source: 'logo.png'
         size_hint: (0.7, 0.7)
@@ -97,7 +106,9 @@
         pos_hint: {'center_x': 0.5, 'center_y': 0.09}
         font_size: dp(10)
         size_hint_x: .8
-        on_release: root.manager.current  = 'criar_login'
+        on_release: 
+            root.manager.current  = 'criar_login'
+            root.manager.transition.direction = 'right'
 
 <MenuScreen>:
     name: 'menu_screen'
@@ -122,10 +133,11 @@
                                 theme_text_color: 'Custom'
                                 text_color: 1,1,1,1
                                 pos_hint: {'center_x': 0.96, 'center_y': 0.99}
+
                         MDLabel:
                             text: 'Home'
                             halign: 'center'
-                            pos_hint: {'center_x': 0.1, 'center_y': 0.96}
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.96}
                             bold: True
                             font_size: dp(20)
                             theme_text_color: 'Custom'
@@ -136,14 +148,19 @@
                         text: 'Explorar'
                         icon: 'magnify'
                         halign: 'center'
-                        
-                        MDTopAppBar:
-                            pos_hint: {'center_x': 0.5, 'center_y': 0.967}  # Posiciona a barra de topo no topo da tela
-                            elevation: 0  # Ajusta a elevação (sombreamento) da barra de topo
-                            
 
                     MDBottomNavigationItem:
                         name: 'terceira tela'
                         text: 'Perfil'
                         icon: 'account'
                         halign: 'center'
+                        canvas:
+                            Color:
+                                rgba: 0, 0.5, 0.5, 1  # Cor Teal
+                            Rectangle:
+                                pos: (0, 650)
+                                size: (480,400)
+                        Image:
+                            source: '3135823.png'
+                            size_hint: (0.35, 0.35)
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.85}
