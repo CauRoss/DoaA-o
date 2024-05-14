@@ -174,22 +174,91 @@
                             pos_hint: {'center_x': 0.5, 'center_y': 0.68}
                             size_hint_x: .2
                             elevation: 0
+                            on_release: 
+                                root.manager.current = 'editar_perfil'
+                                root.manager.transition.direction = 'left'
                         MDFloatLayout:
-                            orientation: 'vertical'
+                            
                             MDList:
+                                pos_hint: {'center_x': 0.5, 'center_y': 0.35}
                                 OneLineAvatarIconListItem:
                                     text: 'Minhas campanhas'
-                                    IconRightWidget:
-                                        icon: 'arrow-right'
+                                    IconLeftWidget:
+                                        icon: 'registerscreen\campanha.png'
                                 OneLineAvatarIconListItem:
                                     text: 'Minhas doações'
-                                    IconRightWidget:
-                                        icon: 'arrow-right'
+                                    IconLeftWidget:
+                                        icon: 'registerscreen\doacao.png'
+               
                                 OneLineAvatarIconListItem:
                                     text: 'Favoritos'
-                                    IconRightWidget:
-                                        icon: 'arrow-right'
+                                    IconLeftWidget:
+                                        icon: 'star'
                                 OneLineAvatarIconListItem:
                                     text: 'Configurações'
-                                    IconRightWidget:
-                                        icon: 'arrow-right'
+                                    IconLeftWidget:
+                                        icon: 'cog'
+
+<EditarPerfil>
+    name: 'editar_perfil'
+    MDIconButton:
+        icon: 'arrow-left'
+        theme_text_color: 'Custom'
+        text_color: (0, 128, 128)
+        pos_hint: {'center_x': 0.05, 'center_y': 0.97}
+        on_release: 
+            root.manager.current = 'menu_screen'
+            root.manager.transition.direction = 'right'
+    Image:
+        source: 'registerscreen\conta.png'
+        size_hint: (0.4, 0.40)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.85}
+    MDLabel:
+        text: 'Novo nome de usuário:'
+        font_size: dp(12)
+        bold: True
+        halign: 'center'
+        pos_hint: {'center_x': 0.35, 'center_y': 0.65}
+    MDTextField:
+        hint_text: 'Nome de usuário'
+        mode: 'round'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+        icon_right: 'account'
+        size_hint_x: .8
+    MDLabel:
+        text: 'Novo email:'
+        font_size: dp(12)
+        bold: True
+        halign: 'center'
+        pos_hint: {'center_x': 0.25, 'center_y': 0.55}   
+    MDTextField:
+        hint_text: 'Email'
+        mode: 'round'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        icon_right: 'email'
+        size_hint_x: .8
+    MDLabel:
+        text: 'Nova senha:'
+        font_size: dp(12)
+        bold: True
+        halign: 'center'
+        pos_hint: {'center_x': 0.25, 'center_y': 0.45}  
+    MDTextField:
+        hint_text: 'Senha'
+        mode: 'round'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+        size_hint_x: .8
+        icon_right: 'lock'
+        password: True
+    MDRaisedButton:
+        text: 'Confirmar alterações'
+        text_color: 1,1,1,1
+        pos_hint: {'center_x': 0.5, 'center_y': 0.13}
+        size_hint_x: .8
+        elevation:0
+        on_release: 
+            root.manager.current = 'menu_screen'
+            root.manager.transition.direction = 'right'              
+                                
+
+                                              
