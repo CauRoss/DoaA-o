@@ -16,20 +16,19 @@ class RegisterScreen(MDScreen):
 class MenuScreen(MDScreen):
     pass
 
+class EditarPerfil(MDScreen):
+    pass
 
 class App(MDApp, App):
     def build(self):
         Window.size = (dp(300), dp(600))  
         Window.clearcolor = (1, 1, 1, 1)
         self.theme_cls.primary_palette = 'Teal'
-        Builder.load_file(os.path.join("registerscreen/registerscreen.kv"))
+        Builder.load_file(os.path.join("registerscreen/main.kv"))
         sm = MDScreenManager()
         sm.add_widget(LoginScreen())
         sm.add_widget(RegisterScreen())
         sm.add_widget(MenuScreen())
+        sm.add_widget(EditarPerfil())
         return sm
          
-        
-        
-if __name__ == "__main__":
-    App().run()
