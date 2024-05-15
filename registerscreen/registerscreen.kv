@@ -128,27 +128,37 @@
                         icon: 'home'
                         halign: 'center'
                         MDTopAppBar:
-                            pos_hint: {'center_x': 0.5, 'center_y': 0.967}  # Posiciona a barra de topo no topo da tela
-                            elevation: 0  # Ajusta a elevação (sombreamento) da barra de topo
-                            MDIconButton:
-                                icon: 'dots-vertical'
-                                theme_text_color: 'Custom'
-                                text_color: 1,1,1,1
-                                pos_hint: {'center_x': 0.96, 'center_y': 0.99}
-
-                        MDLabel:
-                            text: 'Home'
-                            halign: 'center'
-                            pos_hint: {'center_x': 0.5, 'center_y': 0.96}
-                            bold: True
-                            font_size: dp(20)
-                            theme_text_color: 'Custom'
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.967}
+                            elevation: 0 
+                        MDTextField:
+                            hint_text: 'Pesquisar por campanhas'
+                            mode: 'round'
+                            padding: 10
+                            size_hint_x: None
+                            size: '350dp', '20dp'
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.96}  
+                            icon_left: 'magnify'
+                        MDCard:
+                            style: 'elevated'
+                            size_hint: None, None
+                            size: "320dp", "160dp"    
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.775}
+                            FitImage:
+                                source: 'eee.jpg'
+                                allow_stretch: True
+                                keep_ratio: False
+                                radius: 20
+                        MDFillRoundFlatButton:
+                            text: 'Crie sua campanha já!'
                             text_color: 1,1,1,1
-                    
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.69}
+                            size_hint_x: .8
+                            elevation:0
+
                     MDBottomNavigationItem:
                         name: 'segunda tela'
-                        text: 'Explorar'
-                        icon: 'magnify'
+                        text: 'Criar'
+                        icon: 'plus'
                         halign: 'center'
                         MDTopAppBar:
                             pos_hint: {'center_x': 0.5, 'center_y': 0.967}
@@ -184,11 +194,11 @@
                                 OneLineAvatarIconListItem:
                                     text: 'Minhas campanhas'
                                     IconLeftWidget:
-                                        icon: 'registerscreen\campanha.png'
+                                        icon: 'campanha.png'
                                 OneLineAvatarIconListItem:
                                     text: 'Minhas doações'
                                     IconLeftWidget:
-                                        icon: 'registerscreen\doacao.png'
+                                        icon: 'doacao.png'
                
                                 OneLineAvatarIconListItem:
                                     text: 'Favoritos'
@@ -210,7 +220,7 @@
             root.manager.current = 'menu_screen'
             root.manager.transition.direction = 'right'
     Image:
-        source: 'registerscreen\conta.png'
+        source: 'conta.png'
         size_hint: (0.4, 0.40)
         pos_hint: {'center_x': 0.5, 'center_y': 0.85}
     MDLabel:
