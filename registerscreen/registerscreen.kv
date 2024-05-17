@@ -170,7 +170,15 @@
                         halign: 'center'
                         MDTopAppBar:
                             pos_hint: {'center_x': 0.5, 'center_y': 0.967}
-                            elevation: 0 
+                            elevation: 0
+                        MDLabel:
+                            text: 'Criar'
+                            bold: True
+                            halign: 'center'
+                            font_size: dp(20)
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.955}
+                            theme_text_color: 'Custom'
+                            text_color: 1, 1, 1, 1
 
 
                     MDBottomNavigationItem:
@@ -393,3 +401,11 @@
         pos_hint: {'center_x': 0.5, 'center_y': 0.955}
         theme_text_color: 'Custom'
         text_color: 1, 1, 1 ,1
+    MDList:
+        pos_hint: {'center_x': 0.5, 'center_y': 0.859}
+        OneLineListItem:
+            text: 'Tema escuro'
+        OneLineListItem:
+            text: 'Fale conosco'
+    MDSwitch:
+        pos_hint: {'center_x': 0.85, 'center_y': 0.88}
