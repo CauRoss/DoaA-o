@@ -1,16 +1,14 @@
 from kivymd.uix.banner.banner import MDFlatButton
-from kivymd.uix.dialog import MDDialog
 from kivymd.app import MDApp
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.core.window import Window
 from kivymd.uix.screen import MDScreen
 from kivy.metrics import dp
-import os
 from kivymd.uix.screenmanager import MDScreenManager
 from kivy.clock import Clock
 from kivymd.uix.dialog import MDDialog
-from kivymd.uix.button import MDFlatButton
+
 class SplashScreen(MDScreen):
     pass
 
@@ -24,6 +22,9 @@ class MenuScreen(MDScreen):
     pass
 
 class EditarPerfil(MDScreen):
+    pass
+
+class CriacaoCampanha(MDScreen):
     pass
 
 class MinhasCampanhas(MDScreen):
@@ -58,6 +59,7 @@ class App(MDApp, App):
         sm.add_widget(MinhasDoacoes())
         sm.add_widget(Favoritos())
         sm.add_widget(Configuracoes())
+        sm.add_widget(CriacaoCampanha())
         return sm
     
     def on_start(self):
