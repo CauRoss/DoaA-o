@@ -146,22 +146,7 @@
                             size_hint_x: 0.9
                             pos_hint: {'center_x': 0.5, 'center_y': 0.953}  
                             icon_left: 'magnify'
-                        MDCard:
-                            style: 'elevated'
-                            size_hint: (0.87, 0.27)    
-                            pos_hint: {'center_x': 0.5, 'center_y': 0.75}
-                            FitImage:
-                                source: 'eee.jpg'
-                                allow_stretch: True
-                                keep_ratio: False
-                                radius: 15
-                        MDFillRoundFlatButton:
-                            text: 'Crie sua campanha já!'
-                            text_color: 1,1,1,1
-                            pos_hint: {'center_x': 0.5, 'center_y': 0.655}
-                            size_hint_x: .8
-                            elevation: 0
-
+                        
                     MDBottomNavigationItem:
                         name: 'segunda tela'
                         id: 'criar campanha'
@@ -171,14 +156,36 @@
                         MDTopAppBar:
                             pos_hint: {'center_x': 0.5, 'center_y': 0.967}
                             elevation: 0
+                        Image:
+                            source: 'logo.png'
+                            size_hint: (0.2, 0.2)
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.96}
+                        
                         MDLabel:
-                            text: 'Criar'
+                            text: 'Criação rápida:'
+                            pos_hint: {'center_x': 0.24, 'center_y': 0.86}
+                            font_size: dp(20)
                             bold: True
                             halign: 'center'
-                            font_size: dp(20)
-                            pos_hint: {'center_x': 0.5, 'center_y': 0.955}
-                            theme_text_color: 'Custom'
-                            text_color: 1, 1, 1, 1
+                        MDCard:
+                            style: 'elevated'
+                            size_hint: (0.87, 0.27)    
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+                            FitImage:
+                                source: 'eee.jpg'
+                                allow_stretch: True
+                                keep_ratio: False
+                                radius: 15
+                        MDFillRoundFlatButton:
+                            text: 'Crie sua campanha já!'
+                            text_color: 1,1,1,1
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.555}
+                            size_hint_x: .8
+                            elevation: 0
+                            on_release: 
+                                root.manager.current = 'Criação de campanha'
+                                root.manager.transition.direction = 'left'
+
 
 
                     MDBottomNavigationItem:
@@ -252,6 +259,22 @@
                                     IconLeftWidget:
                                         icon: 'logout'
                                         on_release: app.show_alert_dialog()
+                    
+<CriacaoCampanha>
+    name: 'Criação de campanha'
+    MDIconButton:
+        icon: 'arrow-left'
+        theme_text_color: 'Custom'
+        text_color: (0, 128, 128)
+        pos_hint: {'center_x': 0.08, 'center_y': 0.965}
+        on_release: 
+            root.manager.current = 'menu_screen'
+            root.manager.transition.direction = 'right'
+    MDCard:
+        
+
+        
+    
 
 <EditarPerfil>
     name: 'editar_perfil'
