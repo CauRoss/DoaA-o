@@ -8,6 +8,7 @@ from kivy.metrics import dp
 from kivymd.uix.screenmanager import MDScreenManager
 from kivy.clock import Clock
 from kivymd.uix.dialog import MDDialog
+#import mysqlconnector
 
 class SplashScreen(MDScreen):
     pass
@@ -77,15 +78,24 @@ class App(MDApp, App):
                         text = "CANCELAR",
                         theme_text_color = "Custom",
                         text_color = '#008080',
+                        on_release = lambda *args: self.dialog.dismiss()
                     ),
                     MDFlatButton(
                         text = "SAIR",
                         theme_text_color = "Custom",
                         text_color = '#008080',
+                        on_release = lambda *args: self.logout_and_dismiss()
                     ),
                 ],
             )
         self.dialog.open()
+    
+    def logout_and_dismiss(self):
+        self.dialog.dismiss() 
+        self.logout() 
+
+    def logout(self):
+        self.root.current = 'criar_login'
          
 if __name__ == "__main__":
     App().run()
