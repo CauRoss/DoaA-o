@@ -25,9 +25,9 @@
         halign: 'center'
         pos_hint: {'center_x': 0.18, 'center_y': 0.47}
     MDTextField:
-        hint_text: 'Email'
+        hint_text: 'Email ou nome de usuário'
         pos_hint: {'center_x': 0.5, 'center_y': 0.4}
-        icon_right: 'email'
+        icon_right: 'account-outline'
         size_hint_x: .8
         text_color: (3, 187, 133)
         
@@ -70,9 +70,9 @@
             root.manager.current = 'criar_login'
             root.manager.transition.direction = 'right'
     Image:
-        source: 'logo.png' #nessa propriedade eu indico de onde essa imagem está vindo
-        size_hint: (0.7, 0.7)   #nessa aqui eu ajusto o tamanho da imagem
-        pos_hint: {'center_x': 0.5, 'center_y': 0.85} #já nessa,  eu ajusto sua posição na tela
+        source: 'logo.png' 
+        size_hint: (0.7, 0.7) 
+        pos_hint: {'center_x': 0.5, 'center_y': 0.85} 
     MDLabel:
         text: 'DoaAção'
         bold: True
@@ -87,7 +87,7 @@
     MDTextField:
         hint_text: 'Nome de usuário'
         pos_hint: {'center_x': 0.5, 'center_y': 0.4}
-        icon_right: 'account'
+        icon_right: 'account-outline'
         size_hint_x: .8   
     MDTextField:
         hint_text: 'Email'
@@ -262,18 +262,68 @@
                     
 <CriacaoCampanha>
     name: 'Criação de campanha'
+    MDCard:
+        style: 'elevated'
+        size_hint: (1, 0.27)    
+        pos_hint: {'center_x': 0.5, 'center_y': 0.86}
+        md_bg_color: 'teal'
+        MDRelativeLayout:
+            MDIconButton:
+                icon: 'camera-outline'
+                theme_text_color: 'Custom'
+                text_color: 1, 1, 1, 1
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
     MDIconButton:
         icon: 'arrow-left'
         theme_text_color: 'Custom'
-        text_color: (0, 128, 128)
-        pos_hint: {'center_x': 0.08, 'center_y': 0.965}
+        text_color: (1, 1, 1, 1)
+        pos_hint: {'center_x': 0.073, 'center_y': 0.965}
         on_release: 
             root.manager.current = 'menu_screen'
             root.manager.transition.direction = 'right'
-    MDCard:
-        
-
-        
+    MDLabel:
+        text: 'Título da campanha'
+        halign: 'center'
+        pos_hint: {'center_x': 0.198, 'center_y': 0.68}
+        font_size: dp(13)
+    MDTextFieldRect:
+        size_hint: 0.9, None
+        height: dp(32)
+        md_bg_color: 'teal'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.64}
+        hint_text: 'Ex: Doação de sapatos'
+    MDLabel:
+        text: 'Descrição'
+        halign: 'center'
+        pos_hint: {'center_x': 0.13, 'center_y': 0.585}
+        font_size: dp(13)
+    MDTextFieldRect:
+        size_hint: 0.9, None
+        height: dp(100)
+        md_bg_color: 'teal'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        hint_text: 'Adicione uma descrição'
+    MDLabel:
+        text: 'Telefone'
+        halign: 'center'
+        pos_hint: {'center_x': 0.12, 'center_y': 0.39}
+        font_size: dp(13)
+    MDTextFieldRect:
+        size_hint: 0.9, None
+        height: dp(32)
+        md_bg_color: 'teal'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+        hint_text: 'Ex: (81) 91234-5678'
+    MDRaisedButton:
+        text: 'Criar campanha'
+        text_color: 1,1,1,1
+        pos_hint: {'center_x': 0.5, 'center_y': 0.13}
+        size_hint_x: .8
+        elevation:0
+        on_release: 
+            root.manager.current = 'menu_screen'
+            root.manager.transition.direction = 'right'
+    
     
 
 <EditarPerfil>
